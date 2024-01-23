@@ -1,0 +1,1 @@
+export const FORCE_OF_GRAVITY = 32.2;
