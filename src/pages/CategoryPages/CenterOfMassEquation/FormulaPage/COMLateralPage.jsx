@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Formula from "../../../../components/Formula";
 import { round } from "../../../../utils/Conversions";
-import ToggleField from "../../../../components/ToggleField";
+import RadioButtonField from "../../../../components/ToggleField";
 import { getNumericFields } from "../../../../utils/FieldCreator.jsx";
 
 // Field descriptions for the right side
@@ -38,7 +38,8 @@ const leftFieldDescriptions = {
 
 // Toggle field descriptions
 const toggleFieldDescriptions = {
-    isRight: "Left / Right",
+    isRight: "Right",
+    isLeft: "Left",
 };
 
 // Define a functional component for COMLateralPage
@@ -62,15 +63,19 @@ function COMLateralPage() {
                 formulaName={"Lateral CoM (in)"}
                 toggleFields={Object.keys(toggleFieldDescriptions).map(
                     (fieldName) => (
-                        <ToggleField
-                            key={fieldName}
-                            description={toggleFieldDescriptions[fieldName]}
-                            onChange={(newValue) =>
-                                setFields({ ...fields, [fieldName]: newValue })
-                            }
-                        />
-                    ),
-                )}
+                      <RadioButtonField  // Change from ToggleField to RadioButtonField
+                        key={fieldName}
+                        description={toggleFieldDescriptions[fieldName]}
+                        value={fieldName === "isRight" ? fields.isRight : !fields.isRight}
+              onChange={(newValue) => {
+                setFields((prevFields) => ({
+                  ...prevFields,
+                  isRight: fieldName === "isRight" ? newValue : !newValue,
+                }));
+              }}
+            />
+          ),
+        )}
                 numericFields={
                     fields.isRight
                         ? getNumericFields(
