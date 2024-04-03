@@ -10,7 +10,8 @@ const buttons = [
     { route: "/CenterOfMassEquationPage", title: "Center of Mass Equations" },
     { route: "/RadiusCalculationPage", title: "Radius Calculation"},
     { route: "/AcceDeceRatePage", title: "Acceleration / Deceleration rate when Acceleration / Deceleration factor is known"},
-    { route: "/KinEnergyAndWorkPage", title: "Kinetic Energy and Work"}
+    { route: "/KinEnergyAndWorkPage", title: "Kinetic Energy and Work"},
+    { route: "/ChangeInVelocitySpeedScalarPage", title: "Change in Speed/Velocity Scalar"},
 ]
 
 // Define a functional component for the CalculatorPage

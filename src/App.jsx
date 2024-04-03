@@ -32,6 +32,13 @@ import WorkCalPage from "./pages/CategoryPages/KinEnergyAndWork/WorkCalPage.jsx"
 import WorkWithForceAndDistPage from "./pages/CategoryPages/KinEnergyAndWork/FormulaPage/WorkWithForceAndDistPage.jsx";
 import WorkWithWeightAndDistPage from "./pages/CategoryPages/KinEnergyAndWork/FormulaPage/WorkWithWeightAndDistPage.jsx";
 import MphAndFpsDueToKEPage from "./pages/CategoryPages/KinEnergyAndWork/FormulaPage/MphAndFpsDueToKEPage.jsx";
+import ChangeInVelocitySpeedScalar from "./pages/CategoryPages/ChangeInVelocitySpeedScalar/ChangeInVelocitySpeedScalarPage.jsx";
+import ChangeInSpeedUsingBetaPage from "./pages/CategoryPages/ChangeInVelocitySpeedScalar/FormulaPage/ChangeInSpeedUsingBetaPage.jsx";
+import ChangeInSpeedVehicle1Page from "./pages/CategoryPages/ChangeInVelocitySpeedScalar/FormulaPage/ChangeInSpeedVehicle1Page.jsx";
+import ChangeInSpeedVehicle2Page from "./pages/CategoryPages/ChangeInVelocitySpeedScalar/FormulaPage/ChangeInSpeedVehicle2Page.jsx";
+import ChangeInVelocityUsingBetaPage from "./pages/CategoryPages/ChangeInVelocitySpeedScalar/FormulaPage/ChangeInVelocityUsingBetaPage.jsx";
+import ChangeInVelocityVehicle1Page from "./pages/CategoryPages/ChangeInVelocitySpeedScalar/FormulaPage/ChangeInVelocityVehicle1Page.jsx";
+import ChangeInVelocityVehicle2Page from "./pages/CategoryPages/ChangeInVelocitySpeedScalar/FormulaPage/ChangeInVelocityVehicle2Page.jsx";
 
 
 function App() {
@@ -92,6 +99,15 @@ function App() {
                     <Route path={"/WorkWithWeightAndDistPage"} element={<WorkWithWeightAndDistPage />} />
                     <Route path={"/WorkWithForceAndDistPage"} element={<WorkWithForceAndDistPage />} />
                     <Route path={"/MphAndFpsDueToKEPage"} element={<MphAndFpsDueToKEPage />} /> 
+
+                    {/*Change In Velocity Speed Scalar*/}
+                    <Route path={"/ChangeInVelocitySpeedScalarPage"} element={<ChangeInVelocitySpeedScalar />} />
+                    <Route path={"/ChangeInSpeedUsingBetaPage"} element={<ChangeInSpeedUsingBetaPage />} />
+                    <Route path={"/ChangeInSpeedVehicle1Page"} element={<ChangeInSpeedVehicle1Page />} />
+                    <Route path={"/ChangeInSpeedVehicle2Page"} element={<ChangeInSpeedVehicle2Page />} />
+                    <Route path={"/ChangeInVelocityUsingBetaPage"} element={<ChangeInVelocityUsingBetaPage />} />
+                    <Route path={"/ChangeInVelocityVehicle1Page"} element={<ChangeInVelocityVehicle1Page />} />
+                    <Route path={"/ChangeInVelocityVehicle2Page"} element={<ChangeInVelocityVehicle2Page />} />
 
                 </Routes>
             </Router>
