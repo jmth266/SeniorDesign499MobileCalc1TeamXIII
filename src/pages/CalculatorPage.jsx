@@ -12,6 +12,7 @@ const buttons = [
     { route: "/AcceDeceRatePage", title: "Acceleration / Deceleration rate when Acceleration / Deceleration factor is known"},
     { route: "/KinEnergyAndWorkPage", title: "Kinetic Energy and Work"},
     { route: "/ChangeInVelocitySpeedScalarPage", title: "Change in Speed/Velocity Scalar"},
+    { route: "/VectorSumAnalysisPage", title: "Vector Sum Analysis"}
 ]
 
 // Define a functional component for the CalculatorPage

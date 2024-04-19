@@ -39,6 +39,16 @@ import ChangeInSpeedVehicle2Page from "./pages/CategoryPages/ChangeInVelocitySpe
 import ChangeInVelocityUsingBetaPage from "./pages/CategoryPages/ChangeInVelocitySpeedScalar/FormulaPage/ChangeInVelocityUsingBetaPage.jsx";
 import ChangeInVelocityVehicle1Page from "./pages/CategoryPages/ChangeInVelocitySpeedScalar/FormulaPage/ChangeInVelocityVehicle1Page.jsx";
 import ChangeInVelocityVehicle2Page from "./pages/CategoryPages/ChangeInVelocitySpeedScalar/FormulaPage/ChangeInVelocityVehicle2Page.jsx";
+import VectorSumAnalysisPage from "./pages/CategoryPages/VectorSumAnalysis/VectorSumAnalysisPage.jsx";
+import XMomentumPage from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/XMomentumPage.jsx";
+import YMomentumPage from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/YMomentumPage.jsx";
+import ResultantXMomentumPage from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/ResultantXMomentumPage.jsx";
+import ResultantYMomentumPage from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/ResultantYMomentumPage.jsx";
+import TotalMomentumFromVectorPage from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/TotalMomentumFromVectorPage.jsx"
+import MomentumFromWeightPage from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/MomentumFromWeightPage.jsx"
+import TotalMomentumAlongXPage from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/TotalMomentumAlongXPage.jsx"
+import SpeedVehicle1Page from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/SpeedVehicle1Page.jsx"
+import SpeedVehicle2Page from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/SpeedVehicle2Page.jsx"
 
 
 function App() {
@@ -108,6 +118,19 @@ function App() {
                     <Route path={"/ChangeInVelocityUsingBetaPage"} element={<ChangeInVelocityUsingBetaPage />} />
                     <Route path={"/ChangeInVelocityVehicle1Page"} element={<ChangeInVelocityVehicle1Page />} />
                     <Route path={"/ChangeInVelocityVehicle2Page"} element={<ChangeInVelocityVehicle2Page />} />
+
+                    {/*Vector Sum Analysis*/}
+                    <Route path={"/VectorSumAnalysisPage"} element={<VectorSumAnalysisPage />} />
+                    <Route path={"/XMomentumPage"} element={<XMomentumPage />} />
+                    <Route path={"/YMomentumPage"} element={<YMomentumPage />} />
+                    <Route path={"/ResultantXMomentumPage"} element={<ResultantXMomentumPage />} />
+                    <Route path={"/ResultantYMomentumPage"} element={<ResultantYMomentumPage />} />
+                    <Route path={"/TotalMomentumFromVectorPage"} element={<TotalMomentumFromVectorPage />} />
+                    <Route path={"/MomentumFromWeightPage"} element={<MomentumFromWeightPage />} />
+                    <Route path={"/TotalMomentumAlongXPage"} element={<TotalMomentumAlongXPage />} />
+                    <Route path={"/SpeedVehicle1Page"} element={<SpeedVehicle1Page />} />
+                    <Route path={"/SpeedVehicle2Page"} element={<SpeedVehicle2Page />} />
+
 
                 </Routes>
             </Router>

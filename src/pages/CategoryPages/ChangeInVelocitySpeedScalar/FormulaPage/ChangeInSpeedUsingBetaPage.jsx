@@ -38,7 +38,7 @@ function ChangeInSpeedUsingBetaPage() {
                 }
                 onCalculate={() => {setDeltaSpeed(Math.sqrt((fields.speed1 **2) + (fields.speed3 **2) - (2 * fields.speed1 * fields.speed3 * Math.cos(fields.beta))))}}
             />
-            {deltaSpeed !== null && <p>Calculated Change in Velocity for Vehicle: {round(deltaV)} mph</p>}
+            {deltaSpeed !== null && <p>Calculated Change in Velocity for Vehicle: {round(deltaSpeed)} mph</p>}
         </div>
     );
 }
