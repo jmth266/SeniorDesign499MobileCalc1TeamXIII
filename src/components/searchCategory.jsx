@@ -24,6 +24,11 @@ const SearchBarCategory = () => {
         "Acceleration/Deceleration Factors Equation Category": "/AccelDecelFactorsPage",
         "Drag Factor Adjustments Equation Category": "/DragFactorAdjustmentsPage",
         "Airborne Equations Category": "/AirborneEquationsPage",
+        "Time and Distance Category": "/TimeAndDistanceEquationsPage",
+        "Projection Efficiency" : "/ProjectionEfficiencyPage",
+        "Change in Velocity/Speed Scalar Equations": "/ChangeInVelociySpeedScalarPage",
+        "Vector Sum Analysis": "/VectorSumAnalysisPage",
+
 
 
     };
