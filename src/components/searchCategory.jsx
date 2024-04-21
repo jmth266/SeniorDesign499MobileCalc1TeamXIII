@@ -20,6 +20,10 @@ const SearchBarCategory = () => {
         "EDR Category": "/EDR",
         "Constant Uni-Avg Equation Category": "/ConstUniAvgEquationPage",
         "Center of Mass Equation Category": "/CenterOfMassEquationPage",
+        "Combined Speed Equation Category": "/CombinedSpeedPage",
+        "Acceleration/Deceleration Factors Equation Category": "/AccelDecelFactorsPage",
+        "Drag Factor Adjustments Equation Category": "/DragFactorAdjustmentsPage",
+        "Airborne Equations Category": "/AirborneEquationsPage",
 
 
     };
