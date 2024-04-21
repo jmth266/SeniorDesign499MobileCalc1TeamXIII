@@ -15,13 +15,16 @@ function Formula({
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-3">
                     {/* Render Toggle Fields */}
-                    {toggleFields.length > 0 && (
+                    {/* {toggleFields.length > 0 && (
                         <div>
                             {toggleFields.map((field, index) => (
                                 <div key={index}>{field}</div>
                             ))}
                         </div>
-                    )}
+                    )} */}
+                          <div>
+        {toggleFields}
+      </div>
                     {/* Render Numeric Fields */}
                     {numericFields.length > 0 && (
                         <div>
