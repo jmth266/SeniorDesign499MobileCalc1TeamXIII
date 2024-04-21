@@ -1,106 +1,123 @@
 import { useState } from "react";
 import Formula from "../../../../components/Formula";
-import ToggleField from "../../../../components/ToggleField";
+import RadioButtonField from "../../../../components/ToggleField";
 import { round } from "../../../../utils/Conversions";
-import { getNumericFields } from "../../../../utils/FieldCreator.jsx";
+import NumericField from "../../../../components/NumericField.jsx";
 
-// Toggle field description
-const toggleFieldDescriptions = {
-    isRear: "Front / Rear",
+const numericFieldMapping = {
+    front: { description: "Front Axel Length:", placeholderText: "Enter length in inches" },
+    rear: { description: "Rear Axel Length:", placeholderText: "Enter length in inches"},
+  };
+
+const toggleFieldMapping = {
+    isRear: "Calculating Front Axel Length",
+    isFront: "Calculating Rear Axel Length",
 };
 
-// Field descriptions for the front side
-const frontFieldDescriptions = {
-    axle_weight: {
-        description: "Weight of front axle",
-        placeholderText: "Enter weight in pounds",
-    },
-    wheelbase_width: {
-        description: "Wheelbase - distance between front and rear axle",
-        placeholderText: "Enter the distance in inches",
-    },
-    weight: {
-        description: "Total weight of the vehicle",
-        placeholderText: "Enter weight in pounds",
-    },
-};
-
-// Field descriptions for the rear side
-const rearFieldDescriptions = {
-    axle_weight: {
-        description: "Weight of rear axle",
-        placeholderText: "Enter weight in pounds",
-    },
-    wheelbase_width: {
-        description: "Wheelbase - distance between front and rear axle",
-        placeholderText: "Enter the distance in inches",
-    },
-    weight: {
-        description: "Total weight of the vehicle",
-        placeholderText: "Enter weight in pounds",
-    },
-};
 
 // Define a functional component for COMLongitudinalPage
 function COMLongitudinalPage() {
-    const [comdist, setCOMdist] = useState(null);
+    const [result, setResult] = useState(null);
 
     const [fields, setFields] = useState({
-        axle_weight: null,
+        input: null,
         wheelbase_width: null,
         weight: null,
-        isRear: false,
+        isFront:null,
+        isRear: null,
     });
-
-    // TODO: do we need this?
-    const handleValueChange = (fieldName, newValue) => {
-        setFields({ ...fields, [fieldName]: newValue });
-    };
-
-    return (
+    
+      const handleToggleChange = (fieldName, newValue) => {
+        setFields((prevFields) => ({
+          ...prevFields,
+          isFront: fieldName === "isFront" && newValue,
+          isRear: fieldName === "isRear" && newValue,
+        }));
+    
+        // Reset the result when the radio button changes
+        setResult(null);
+      };
+    
+      const handleInputChange = (newValue) => {
+        setFields((prevFields) => ({
+          ...prevFields,
+          input: newValue,
+        }));
+        return input
+      };
+    
+      const handleWheelBaseChange = (newValue) => {
+        setFields((prevFields) => ({
+          ...prevFields,
+          wheelbase_width: newValue,
+        }));
+        return wheelbase_width
+      };     
+      const handleWeightChange = (newValue) => {
+        setFields((prevFields) => ({
+          ...prevFields,
+          weight: newValue,
+        }));
+        return weight
+      };
+    
+      return (
         <div className={"container mb-5 center"}>
-            <Formula
-                formulaName={"Longitudinal CoM (in)"}
-                toggleFields={Object.keys(toggleFieldDescriptions).map(
-                    (fieldName) => (
-                        <ToggleField
-                            key={fieldName}
-                            description={toggleFieldDescriptions[fieldName]}
-                            onChange={(newValue) =>
-                                setFields({ ...fields, [fieldName]: newValue })
-                            }
-                        />
-                    ),
-                )}
-                numericFields={
-                    fields.isRear
-                        ? getNumericFields(
-                              fields,
-                              rearFieldDescriptions,
-                              handleValueChange,
-                          )
-                        : getNumericFields(
-                              fields,
-                              frontFieldDescriptions,
-                              handleValueChange,
-                          )
-                }
-                onCalculate={() => {
-                    setCOMdist(
-                        (fields.axle_weight * fields.wheelbase_width) /
-                            fields.weight,
-                    );
-                }}
+          <Formula
+            formulaName={"Accelerate from Stop or Decelerate to Stop"}
+            toggleFields={Object.keys(toggleFieldMapping).map((fieldName) => (
+              <RadioButtonField
+                key={fieldName}
+                description={toggleFieldMapping[fieldName]}
+                value={fields[fieldName]}
+                onChange={(newValue) => handleToggleChange(fieldName, newValue)}
+              />
+            ))}
+            numericFields={[
+              fields.isFront || fields.isRear ? (
+                <NumericField
+                  key={fields.isFront ? "front" : "rear"}
+                  description={numericFieldMapping[fields.isFront ? "front" : "rear"].description}
+                  placeholderText={numericFieldMapping[fields.isFront ? "front" : "rear"].placeholderText}
+                  onChange={handleInputChange}
+                  currValue={fields.input}
+                />
+              ) : null,
+              <NumericField
+                key="wheelbase_width"
+                description="Wheelbase Width:"
+                placeholderText="Enter Wheelbase Width"
+                onChange={handleWheelBaseChange}
+                currValue={fields.wheelbase_width}
+              />,
+              <NumericField
+              key="weight"
+              description="Total Weight:"
+              placeholderText="Enter Weight"
+              onChange={handleWeightChange}
+              currValue={fields.weight}
             />
-            {comdist !== null && (
-                <p>
-                    Calculated Distance behind the{" "}
-                    {fields.isRear ? "Rear" : "Front"} Axle of COM Location:{" "}
-                    {round(comdist)}
-                </p>
-            )}
+   
+            ]}
+            onCalculate={() => {
+              const { input, weight, wheelbase_width, isFront } = fields;
+              let calculatedResult;
+              if (isFront) {
+                calculatedResult = input * (wheelbase_width/weight);
+                setResult(`Rear Side Length is ${calculatedResult.toFixed(2)}in.`);
+
+              } else {
+                calculatedResult = input * (wheelbase_width/weight);
+                setResult(`Front Side Length is ${calculatedResult.toFixed(2)}in.`);
+
+              }
+            }}
+          />
+          {result !== null && (
+            <p>{result}</p>
+          )}
         </div>
-    );
-}
+      );
+    }
 
 export default COMLongitudinalPage;
