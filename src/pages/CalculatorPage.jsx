@@ -9,7 +9,7 @@ const buttons = [
     { route: "/ConstUniAvgEquationPage", title: "Constant, Uniform, or Average Kinematic Equations" },
     { route: "/CenterOfMassEquationPage", title: "Center of Mass Equations" },
     { route: "/RadiusCalculationPage", title: "Radius Calculation"},
-    { route: "/AcceDeceRatePage", title: "Acceleration / Deceleration rate when Acceleration / Deceleration factor is known"},
+    { route: "/AcceDeceRatePage", title: "Acceleration / Deceleration Rate},
     { route: "/KinEnergyAndWorkPage", title: "Kinetic Energy and Work"},
     { route: "/ChangeInVelocitySpeedScalarPage", title: "Change in Speed/Velocity Scalar"},
     { route: "/VectorSumAnalysisPage", title: "Vector Sum Analysis"},
@@ -17,6 +17,8 @@ const buttons = [
     { route: "/AccelDecelFactorsPage", title: "Acceleration / Deceleration Factors"},
     { route: "/AirborneEquationsPage", title: "Airborne Equations"},
     { route: "/DragFactorAdjustmentsPage", title: "Drag Factor Adjustments"}
+    { route: "/TimeAndDistanceEquationsPage", title: "Time and Distance Equations"},
+    { route: "/ProjectionEfficiencyPage", title: "Projection Efficiency"},
 ]
 
 // Define a functional component for the CalculatorPage
