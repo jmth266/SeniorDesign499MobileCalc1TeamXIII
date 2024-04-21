@@ -44,6 +44,36 @@ const SearchBarFormula = () => {
     "Acceleration / Deceleration Factor Vehicle Slows or Accelerates From One Speed to Another Time Known": "AccDecFactorSpeedToSpeed",
     "Coefficient of Friction Speed Skid": "COFSpeedSkid",
     "Coefficient of Friction Force Weight": "COFwithForceAndWeight",
+    // Time and Distance Equations
+    "Time To Accelerate/Decelerate To Stop Page": "/GravityAndVelocityPage",
+    "Acceleration/Deceleration Rate": "/AccAndDecRatePage",
+    "Velocity and Acceleration": "/VelocityAndAccelerationPage",
+    "Acceleration/Deceleration from One Speed to Another": "/AccFromOneSpeedToAnotherPage",
+    "Distance for Vehicle to Acclerate/Declerate from stop/to start": "/DistanceToAccOrDecPage",
+    "Distance for Vehicle to Acclerate/Declerate from stop/to start with Acc/Dec rates known": "/TimeForVehicleToStopPage",
+    "Distance Object Traveled with Known Acc/Dec Rate": "/DistanceObjectTraveledWithKnownAccDecRatePage",
+    "Distance Object Traveled with Known Acc/Dec Factor": "/DistanceObjectTraveledWithKnownAccDecFactorPage",
+    "Velocity at any time during Acceleration/Deceleration Rate ": "/VelocityDuringAccDecRatePage",
+    "Velocity at any time during Acceleration/Deceleration Facotr ": "/VelocityDuringAccDecFactorPage",
+    "Velocity at any distance during Acceleration/Deceleration Rate": "/VelocityAtDistanceFromAccDecRatePage",
+    "Velocity at any distance during Acceleration/Deceleration Factor": "/VelocityAtDistanceFromAccDecFactorPage",
+    // Change in Velocity/Speed Scalar Equations
+    "Change in Velocity Vehicle 1 (fps)": "/ChangeInVelocityVehicle1Page",
+    "Change in Speed Vehicle 1 (mph)": "/ChangeInSpeedVehicle1Page",
+    "Change in Velocity Vehicle 2 (fps)": "/ChangeInVelocityVehicle2Page",
+    "Change in Speed Vehicle 2 (mph)": "/ChangeInSpeedVehicle2Page",
+    "Change in Velocity Using Beta (fps)": "/ChangeInVelocityUsingBetaPage",
+    "Change in Speed Using Beta (mph)": "/ChangeInSpeedUsingBetaPage",
+    //Vector Sum Analysis
+    "Vehicle Momentum Along X-Axis (mph)": "/XMomentumPage",
+    "Vehicle Momentum Along Y-Axis (mph)": "/YMomentumPage",
+    "Resultant Momentum Along X-Axis (mph)": "/ResultantXMomentumPage",
+    "Resultant Momentum Along Y-Axis (mph)": "/ResultantYMomentumPage",
+    "Total Momentum Magnitude From Momentum Vectors (mph)": "/TotalMomentumFromVectorPage",
+    "Total Momentum Magnitude From Speed and Weight (mph/fps)": "/MomentumFromWeightPage",
+    "Total Momentum Along X-Axis (mph/fps)": "/TotalMomentumAlongXPage",
+    "Speed of Vehicle 1 (mph)": "/SpeedVehicle1Page",
+    "Speed of Vehicle 2 (mph)": "/SpeedVehicle2Page",
   };
 
   // This function is called to update suggestions when input changes
