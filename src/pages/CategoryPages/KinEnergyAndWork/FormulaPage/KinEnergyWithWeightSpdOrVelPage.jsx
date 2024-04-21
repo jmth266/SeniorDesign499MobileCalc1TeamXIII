@@ -1,86 +1,103 @@
 import { useState } from "react";
-import ToggleField from "../../../../components/ToggleField.jsx";
+import RadioButtonField from "../../../../components/ToggleField.jsx";
 import Formula from "../../../../components/Formula.jsx";
-import { round } from "../../../../utils/Conversions.js";
+import { forceOfGravity } from "../../../../utils/Conversions.js";
 import NumericField from "../../../../components/NumericField.jsx";
-import { getNumericFields } from "../../../../utils/FieldCreator.jsx";
 
-const speedFieldDescription = {
+const numericFieldMapping = {
     speed: { description: "Speed of the object:", placeholderText: "mph" },
-    weight: { description: "Weight of the object:", placeholderText: "pounds" },
-};
-
-const velocityFieldDescription = {
     velocity: { description: "Velocity of the object:", placeholderText: "fps" },
     weight: { description: "Weight of the object:", placeholderText: "pounds" },
 };
 
-const toggleFieldDescriptions= {
-    isSpeed: "Velocity (fps) / Speed (mph)",
+const toggleFieldMapping = {
+  isSpeed: "Speed (mph)",
+  isVelocity: "Velocity (fps)",
 };
 
 function KinEnergyWithWeightSpdOrVel() {
-    const [fields, setFields] = useState({
-        speed: null,
-        isSpeed: false,
-        velocity: null,
-    });
+  const [fields, setFields] = useState({
+    weight: null,
+    input: null,
+    isSpeed: null,
+    isVelocity: null,
+  });
 
-    const [ke, setKE] = useState(null);
+  const [result, setResult] = useState(null);
 
-    
+  const handleToggleChange = (fieldName, newValue) => {
+    setFields((prevFields) => ({
+      ...prevFields,
+      isSpeed: fieldName === "isSpeed" && newValue,
+      isVelocity: fieldName === "isVelocity" && newValue,
+    }));
 
-    const handleValueChange = (fieldName, newValue) => {
-        setFields((prevFields) => ({ ...prevFields, [fieldName]: newValue }));
-    };
+    // Reset the result when the radio button changes
+    setResult(null);
+  };
 
+  const handleInputChange = (newValue) => {
+    setFields((prevFields) => ({
+      ...prevFields,
+      input: newValue,
+    }));
+    return input
+  };
 
-    return (
-        <div className={"container mb-5 center"}>
-            <Formula
-                formulaName={"Kinetic Energy using Weight and Speed / Velocity"}
-                toggleFields={Object.keys(toggleFieldDescriptions).map(
-                    (fieldName) => (
-                        <ToggleField
-                            key={fieldName}
-                            description={toggleFieldDescriptions[fieldName]}
-                            onChange={(newValue) =>
-                                setFields({ ...fields, [fieldName]: newValue })
-                            }
-                        />
-                    ),
-                )}
-                numericFields={
-                    fields.isSpeed
-                        ? getNumericFields(
-                              fields,
-                              speedFieldDescription,
-                              handleValueChange,
-                          )
-                        : getNumericFields(
-                              fields,
-                              velocityFieldDescription,
-                              handleValueChange,
-                          )
-                }
-                onCalculate={() => {
-                    if( fields.isSpeed === true){
-                        setKE((fields.weight * ((fields.speed)**2))/64.4);
-                    }
-                    else{
-                        setKE((fields.weight * ((fields.velocity)**2))/30);
-                    }
+  const handleWeightChange = (newValue) => {
+    setFields((prevFields) => ({
+      ...prevFields,
+      weight: newValue,
+    }));
+    return weight
+  };
 
-                    
-                }}
+  return (
+    <div className={"container mb-5 center"}>
+      <Formula
+        formulaName={"Kinetic Energy using Weight and Speed / Velocity"}
+        toggleFields={Object.keys(toggleFieldMapping).map((fieldName) => (
+          <RadioButtonField
+            key={fieldName}
+            description={toggleFieldMapping[fieldName]}
+            value={fields[fieldName]}
+            onChange={(newValue) => handleToggleChange(fieldName, newValue)}
+          />
+        ))}
+        numericFields={[
+          fields.isSpeed || fields.isVelocity ? (
+            <NumericField
+              key={fields.isVelocity ? "velocity" : "speed"}
+              description={numericFieldMapping[fields.isVelocity ? "velocity" : "speed"].description}
+              placeholderText={numericFieldMapping[fields.isVelocity ? "velocity" : "speed"].placeholderText}
+              onChange={handleInputChange}
+              currValue={fields.input}
             />
-            {ke !== null && (
-                <p>
-                    Kinetic Energy: {round(ke)} ft-lbs
-                </p>
-            )}
-        </div>
-    );
+          ) : null,
+          <NumericField
+            key="weight"
+            description="Weight:"
+            placeholderText="Enter weight"
+            onChange={handleWeightChange}
+            currValue={fields.weight}
+          />
+        ]}
+        onCalculate={() => {
+          const { weight, isSpeed, input } = fields;
+          let calculatedResult;
+          if (isSpeed) {
+            calculatedResult = weight * ((input)**2)/64.4;
+          } else {
+            calculatedResult = (weight * ((input)**2))/30;
+          }
+          setResult(`Time is ${calculatedResult.toFixed(3)}s`);
+        }}
+      />
+      {result !== null && (
+        <p>{result}</p>
+      )}
+    </div>
+  );
 }
 
 export default KinEnergyWithWeightSpdOrVel;
