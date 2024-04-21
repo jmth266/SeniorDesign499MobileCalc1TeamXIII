@@ -91,6 +91,23 @@ import COFWithRoadwaySlope from "./pages/CategoryPages/DragFactorAdjustments/For
 import COFWithRoadwayGrade from "./pages/CategoryPages/DragFactorAdjustments/FormulaPage/COFWithRoadwayGrade.jsx";
 import COFGradeUphillDownhill from "./pages/CategoryPages/DragFactorAdjustments/FormulaPage/COFGradeUphillDownhill.jsx";
 import COFSuperElevation from "./pages/CategoryPages/DragFactorAdjustments/FormulaPage/COFSuperElevation.jsx";
+//Time and Distance Imports
+import TimeAndDistancePage from "./pages/CategoryPages/TimeAndDistanceEquations/TimeAndDistanceEquationsPage.jsx";
+import GravityAndVelocityPage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/GravityAndVelocityPage.jsx"; 
+import AccAndDecRatePage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/AccAndDecRatePage.jsx";
+import VelocityAndAccelerationPage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/VelocityAndAccelerationPage.jsx";
+import AccFromOneSpeedToAnotherPage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/AccFromOneSpeedToAnotherPage.jsx";
+import DistanceToAccOrDecPage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/DistanceToAccOrDecPage.jsx";
+import TimeForVehicleToStopPage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/TimeForVehicleToStopPage.jsx";
+import DistanceObjectTraveledWithKnownAccDecRatePage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/DistanceObjectTraveledWithKnownAccDecRatePage.jsx";
+import DistanceObjectTraveledWithKnownAccDecFactorPage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/DistanceObjectTraveledWithKnownAccDecFactorPage.jsx";
+import VelocityDuringAccDecRatePage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/VelocityDuringAccDecRatePage.jsx";
+import VelocityDuringAccDecFactorPage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/VelocityDuringAccDecFactorPage.jsx";
+import VelocityAtDistanceFromAccDecFactorPage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/VelocityAtDistanceromAccDecFactorPage.jsx";
+import VelocityAtDistanceFromAccDecRatePage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/VelocityAtDistanceFromAccDecRatePage.jsx";
+//Projection Efficiency Import
+import ProjectionEfficiencyPage from "./pages/CategoryPages/PedestrianOrBicycleProjectionEfficiency/ProjectionEfficiencyPage.jsx";
+
 
 function App() {
 
@@ -226,6 +243,25 @@ function App() {
                     <Route path={"/COFWithRoadwayGrade"} element={<COFWithRoadwayGrade />} />
                     <Route path={"/COFGradeUphillDownhill"} element={<COFGradeUphillDownhill />} />
                     <Route path={"/COFSuperElevation"} element={<COFSuperElevation />} />
+
+                    {/*Time and Distance Equations*/}
+                    <Route path={"/TimeAndDistanceEquationsPage"} element={<TimeAndDistancePage />} />
+                    <Route path={"/GravityAndVelocityPage"} element={<GravityAndVelocityPage />} />
+                    <Route path={"/AccAndDecRatePage"} element= {<AccAndDecRatePage />} />
+                    <Route path ={"/VelocityAndAccelerationPage"} element= {<VelocityAndAccelerationPage />} />
+                    <Route path ={"/AccFromOneSpeedToAnotherPage"} element= {<AccFromOneSpeedToAnotherPage />} />
+                    <Route path ={"/DistanceToAccOrDecPage"} element= {< DistanceToAccOrDecPage />} />
+                    <Route path ={"/TimeForVehicleToStopPage"} element= {< TimeForVehicleToStopPage />} />
+                    <Route path ={"/DistanceObjectTraveledWithKnownAccDecRatePage"} element= {< DistanceObjectTraveledWithKnownAccDecRatePage />} />
+                    <Route path ={"/DistanceObjectTraveledWithKnownAccDecFactorPage"} element= {<DistanceObjectTraveledWithKnownAccDecFactorPage />} />
+                    <Route path ={"/VelocityDuringAccDecRatePage"} element= {<VelocityDuringAccDecRatePage />} />
+                    <Route path ={"/VelocityDuringAccDecFactorPage"} element= {<VelocityDuringAccDecFactorPage />} />
+                    <Route path ={"/VelocityAtDistanceFromAccDecRatePage"} element= {<VelocityAtDistanceFromAccDecRatePage />} />
+                    <Route path ={"/VelocityAtDistanceFromAccDecFactorPage"} element= {<VelocityAtDistanceFromAccDecFactorPage />} />
+
+                    
+                    {/*Projection Efficiency */}
+                    <Route path="/ProjectionEfficiencyPage" element ={<ProjectionEfficiencyPage />} />
                     
                 </Routes>
             </Router>
