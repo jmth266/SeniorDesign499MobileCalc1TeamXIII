@@ -63,7 +63,34 @@ import MomentumFromWeightPage from "./pages/CategoryPages/VectorSumAnalysis/Form
 import TotalMomentumAlongXPage from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/TotalMomentumAlongXPage.jsx"
 import SpeedVehicle1Page from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/SpeedVehicle1Page.jsx"
 import SpeedVehicle2Page from "./pages/CategoryPages/VectorSumAnalysis/FormulaPages/SpeedVehicle2Page.jsx"
-
+import CombinedSpeedPage from "./pages/CategoryPages/Combined Speed/CombinedSpeedPage.jsx";
+import StartingCombinedSpeedPage from "./pages/CategoryPages/Combined Speed/FormulaPage/CombinedSpeed.jsx";
+import CombinedSpeedMultipleSurfaces from "./pages/CategoryPages/Combined Speed/FormulaPage/CombinedSpeedMultipleSurfaces.jsx";
+//import CombinedVelocity from "./pages/CategoryPages/Combined Speed/FormulaPage/CombinedVelocity.jsx";
+import AccelDecelFactorsPage from "./pages/CategoryPages/AccelDecelFactors/AccelDecelFactorsPage.jsx";
+import COFwithForceAndWeight from "./pages/CategoryPages/AccelDecelFactors/FormulaPage/COFwithForceAndWeight.jsx";
+import COFSpeedSkid from "./pages/CategoryPages/AccelDecelFactors/FormulaPage/COFSpeedSkid.jsx";
+import AccDecFactorSlowingAcceling from "./pages/CategoryPages/AccelDecelFactors/FormulaPage/AccDecFactorSlowingAcceling.jsx";
+import AccDecFactorDistanceTime from "./pages/CategoryPages/AccelDecelFactors/FormulaPage/AccDecFactorDistanceTime.jsx";
+import AccDecFactorSpeedToSpeed from "./pages/CategoryPages/AccelDecelFactors/FormulaPage/AccDecFactorSpeedToSpeed.jsx";
+import AccDecFactorRateKnown from "./pages/CategoryPages/AccelDecelFactors/FormulaPage/AccDecFactorRateKnown.jsx";
+import AirborneEquationsPage from "./pages/CategoryPages/AirborneEquations/AirborneEquationsPage.jsx";
+import SpeedOfAirborneObjectWithGradeUphill from "./pages/CategoryPages/AirborneEquations/FormulaPage/SpeedOfAirborneObjectWithGradeUphill.jsx";
+import SpeedOfAirborneObjectWithGradePage from "./pages/CategoryPages/AirborneEquations/SpeedOfAirborneObjectWithGradePage.jsx";
+import SpeedOfAirborneObjectWithGradeDownhill from "./pages/CategoryPages/AirborneEquations/FormulaPage/SpeedOfAirborneObjectWithGradeDownhill.jsx";
+import VelocityOfAirborneObjectWithGradePage from "./pages/CategoryPages/AirborneEquations/VelocityOfAirborneObjectWithGradePage.jsx";
+import VelocityOfAirborneObjectWithGradeUphill from "./pages/CategoryPages/AirborneEquations/FormulaPage/VelocityOfAirborneObjectWithGradeUphill.jsx";
+import VelocityOfAirborneObjectWithGradeDownhill from "./pages/CategoryPages/AirborneEquations/FormulaPage/VelocityOfAirborneObjectWithGradeDownhill.jsx";
+import SpeedOfAirborneObjectWithAngle from "./pages/CategoryPages/AirborneEquations/FormulaPage/SpeedOfAirborneObjectWithAngle.jsx";
+import AirborneSpeedLevelSurface from "./pages/CategoryPages/AirborneEquations/FormulaPage/AirborneSpeedLevelSurface.jsx";
+import AirborneVelocityLevelSurface from "./pages/CategoryPages/AirborneEquations/FormulaPage/AirborneVelocityLevelSurface.jsx";
+import VelocityOfAirborneObjectWithAngle from "./pages/CategoryPages/AirborneEquations/FormulaPage/VelocityOfAirborneObjectWithAngle.jsx";
+import HighestPointOnFlightPath from "./pages/CategoryPages/AirborneEquations/FormulaPage/HighestPointOnFlightPath.jsx";
+import DragFactorAdjustmentsPage from "./pages/CategoryPages/DragFactorAdjustments/DragFactorAdjustmentsPage.jsx";
+import COFWithRoadwaySlope from "./pages/CategoryPages/DragFactorAdjustments/FormulaPage/COFWithRoadwaySlope.jsx";
+import COFWithRoadwayGrade from "./pages/CategoryPages/DragFactorAdjustments/FormulaPage/COFWithRoadwayGrade.jsx";
+import COFGradeUphillDownhill from "./pages/CategoryPages/DragFactorAdjustments/FormulaPage/COFGradeUphillDownhill.jsx";
+import COFSuperElevation from "./pages/CategoryPages/DragFactorAdjustments/FormulaPage/COFSuperElevation.jsx";
 
 function App() {
 
@@ -163,6 +190,43 @@ function App() {
                     
                     {/*Projection Efficiency */}
                     <Route path="/ProjectionEfficiencyPage" element ={<ProjectionEfficiencyPage />} />
+
+                    {/*Combined Speed Equations*/}
+                    <Route path={"/CombinedSpeedPage"} element={<CombinedSpeedPage />} />
+                    <Route path={"/CombinedSpeed"} element={<StartingCombinedSpeedPage />} />
+                    <Route path={"/CombinedSpeedMultipleSurfaces"} element={<CombinedSpeedMultipleSurfaces />} />
+                    
+
+                    {/*Acc/Dec Factor Equations*/}
+                    <Route path={"/AccelDecelFactorsPage"} element={<AccelDecelFactorsPage />} />
+                    <Route path={"/COFwithForceAndWeight"} element={<COFwithForceAndWeight />} />
+                    <Route path={"/COFSpeedSkid"} element={<COFSpeedSkid />} />
+                    <Route path={"/AccDecFactorSlowingAcceling"} element={<AccDecFactorSlowingAcceling />} />
+                    <Route path={"/AccDecFactorDistanceTime"} element={<AccDecFactorDistanceTime />} />
+                    <Route path={"/AccDecFactorSpeedToSpeed"} element={<AccDecFactorSpeedToSpeed />} />
+                    <Route path={"/AccDecFactorRateKnown"} element={<AccDecFactorRateKnown />} />
+
+                    {/*Airborne Equations*/}
+                    <Route path={"/AirborneEquationsPage"} element={<AirborneEquationsPage />} />
+                    <Route path={"/SpeedOfAirborneObjectWithGradeUphill"} element={<SpeedOfAirborneObjectWithGradeUphill />} />
+                    <Route path={"/SpeedOfAirborneObjectWithGradePage"} element={<SpeedOfAirborneObjectWithGradePage />} />
+                    <Route path={"/SpeedOfAirborneObjectWithGradeDownhill"} element={<SpeedOfAirborneObjectWithGradeDownhill />} />
+                    <Route path={"/VelocityOfAirborneObjectWithGradeUphill"} element={<VelocityOfAirborneObjectWithGradeUphill />} />
+                    <Route path={"/VelocityOfAirborneObjectWithGradePage"} element={<VelocityOfAirborneObjectWithGradePage />} />
+                    <Route path={"/VelocityOfAirborneObjectWithGradeDownhill"} element={<VelocityOfAirborneObjectWithGradeDownhill />} />
+                    <Route path={"/SpeedOfAirborneObjectWithAngle"} element={<SpeedOfAirborneObjectWithAngle />} />
+                    <Route path={"/VelocityOfAirborneObjectWithAngle"} element={<VelocityOfAirborneObjectWithAngle />} />
+                    <Route path={"/AirborneSpeedLevelSurface"} element={<AirborneSpeedLevelSurface />} />
+                    <Route path={"/AirborneVelocityLevelSurface"} element={<AirborneVelocityLevelSurface />} />
+                    <Route path={"/HighestPointOnFlightPath"} element={<HighestPointOnFlightPath />} />
+
+                    {/*Drag Factor Adjustment Equations*/}
+                    <Route path={"/DragFactorAdjustmentsPage"} element={<DragFactorAdjustmentsPage />} />
+                    <Route path={"/COFWithRoadwaySlope"} element={<COFWithRoadwaySlope />} />
+                    <Route path={"/COFWithRoadwayGrade"} element={<COFWithRoadwayGrade />} />
+                    <Route path={"/COFGradeUphillDownhill"} element={<COFGradeUphillDownhill />} />
+                    <Route path={"/COFSuperElevation"} element={<COFSuperElevation />} />
+                    
                 </Routes>
             </Router>
         </div>
