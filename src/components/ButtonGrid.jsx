@@ -12,7 +12,7 @@ const ButtonGrid = ({categoryName, buttons}) => {
                     {buttons.map((button, index) => (
                         <button
                             key={index}
-                            className="btn btn-primary mt-4 text-truncate"
+                            className="btn btn-primary mt-4"
                             onClick={() => navigate(button.route)}
                         >
                             {button.title}
