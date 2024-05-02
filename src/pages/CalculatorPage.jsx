@@ -21,6 +21,8 @@ const buttons = [
     { route: "/ProjectionEfficiencyPage", title: "Projection Efficiency"},
     { route: "/MotorcycleEquationPage", title: "Motorcycle Equation"},
     { route: "/PedestrianEquationPage", title: "PedestrianEquation"},
+    { route: "/SwerveToAvoidEquationPage", title: "Swerve to Avoid Equation"},
+    { route: "/SearleEquationPage", title: "Searle Equation"},
 ]
 
 // Define a functional component for the CalculatorPage
