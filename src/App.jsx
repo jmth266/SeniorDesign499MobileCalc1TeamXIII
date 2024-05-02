@@ -107,6 +107,14 @@ import VelocityAtDistanceFromAccDecFactorPage from "./pages/CategoryPages/TimeAn
 import VelocityAtDistanceFromAccDecRatePage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/VelocityAtDistanceFromAccDecRatePage.jsx";
 //Projection Efficiency Import
 import ProjectionEfficiencyPage from "./pages/CategoryPages/PedestrianOrBicycleProjectionEfficiency/ProjectionEfficiencyPage.jsx";
+import TimeAndDistancePage from "./pages/CategoryPages/TimeAndDistanceEquations/TimeAndDistanceEquationsPage.jsx";
+import TimeToAccOrDecToStopPage from "./pages/CategoryPages/TimeAndDistanceEquations/FormulaPage/TimeToAccOrDecToStopPage.jsx"; 
+import ProjectionEfficiencyPage from "./pages/CategoryPages/PedestrianOrBicycleProjectionEfficiency/ProjectionEfficiencyPage.jsx";
+import SwerveToAvoidEquationPage from "./pages/SwerveToAvoidEquation/SwerveToAvoidEquationPage.jsx";
+import ProjectionEfficiencyPage from "./pages/CategoryPages/PedestrianOrBicycleProjectionEfficiency/ProjectionEfficiencyPage.jsx";
+import SwerveToAvoidEquationPage from "./pages/CategoryPages/MotorcycleEquation/MotorcycleEquationPage.jsx";
+import PercentGradePage from "./pages/CategoryPages/GradeAndSuperElevation/FormulaPage/PercentGradePage";
+import MotorcycleEquations from "./pages/CategoryPages/MotorcycleEquation/FormulaPage/MotorcycleEquationPage";
 
 
 function App() {
@@ -262,6 +270,8 @@ function App() {
                     
                     {/*Projection Efficiency */}
                     <Route path="/ProjectionEfficiencyPage" element ={<ProjectionEfficiencyPage />} />
+
+        
                     
                 </Routes>
             </Router>
