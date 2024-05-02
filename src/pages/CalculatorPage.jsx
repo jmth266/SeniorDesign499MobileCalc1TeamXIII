@@ -19,6 +19,8 @@ const buttons = [
     { route: "/DragFactorAdjustmentsPage", title: "Drag Factor Adjustments"}
     { route: "/TimeAndDistanceEquationsPage", title: "Time and Distance Equations"},
     { route: "/ProjectionEfficiencyPage", title: "Projection Efficiency"},
+    { route: "/MotorcycleEquationPage", title: "Motorcycle Equation"},
+    { route: "/PedestrianEquationPage", title: "PedestrianEquation"},
 ]
 
 // Define a functional component for the CalculatorPage
